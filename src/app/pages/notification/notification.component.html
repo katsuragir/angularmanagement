@@ -1,0 +1,11 @@
+<nb-card>
+    <nb-card-header>Notification</nb-card-header>
+    <nb-card-body>
+      {{title}}
+    </nb-card-body>
+    <nb-card-footer>
+      <button nbButton hero status="danger" (click)="dismiss(false)" style="margin-right: 5px;">No</button>
+      <button nbButton hero status="primary" (click)="dismiss(true)">Yes</button>
+    </nb-card-footer>
+</nb-card>
+  

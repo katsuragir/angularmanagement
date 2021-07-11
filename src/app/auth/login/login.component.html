@@ -1,0 +1,21 @@
+<div [nbSpinner]="loading" nbSpinnerStatus="danger" nbSpinnerSize="giant" nbSpinnerMessage="Loading">
+  <form [formGroup]="loginForm" (ngSubmit)="login()" aria-labelledby="title">
+    <h1 id="title" class="title">Login</h1>
+    <p class="sub-title">Hello! Log in with your username</p>
+
+    <div class="form-control-group">
+      <label class="label">Username</label>
+      <input type="text" nbInput fullWidth id="username" formControlName="username">
+    </div>
+
+    <div class="form-control-group">
+      <label class="label">Password</label>
+      <input type="text" nbInput fullWidth id="password" type="password" formControlName="password">
+    </div>
+
+
+    <button nbButton fullWidth status="primary" size="large" [disabled]="password">
+      Log In
+    </button>
+  </form>
+</div>

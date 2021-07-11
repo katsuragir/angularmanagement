@@ -1,0 +1,27 @@
+<div class="header-container">
+  <div class="logo-container">
+    <!-- action hide / show side menu -->
+    <a (click)="toggleSidebar()" href="#" class="sidebar-toggle">
+      <nb-icon icon="menu-2-outline"></nb-icon>
+    </a>
+    <!---->
+    <!-- Logo -->
+    <a class="logo" href="#" (click)="navigateHome()"><img src="./assets/images/logo.svg" width="130px"></a>
+    <!---->
+  </div>
+</div>
+<!-- Title -->
+<div class="header-container">
+  <h5>Angular Management</h5>
+</div>
+<!---->
+<!-- user icon action -->
+<div class="header-container">
+  <nb-actions size="small">
+    <nb-action class="user-action" >
+      <nb-user [nbContextMenu]="userMenu" [nbContextMenuTag]="tag" [onlyPicture]="userPictureOnly" [name]="namaUser" [picture]="profilePicture" [title]="jabatan">
+      </nb-user>
+    </nb-action>
+  </nb-actions>
+</div>
+<!---->

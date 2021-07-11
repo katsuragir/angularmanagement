@@ -1,0 +1,68 @@
+<nb-card>
+    <nb-card-header>{{title}}</nb-card-header>
+    <nb-card-body>
+        <div class="row baris">
+            <div class="col-md-4">
+                <div class="row">
+                    <div class="col-sm-6">Username :</div>
+                    <div class="col-sm-6">{{user.userName}}</div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="row">
+                    <div class="col-sm-6">First Name :</div>
+                    <div class="col-sm-6">{{user.firstName}}</div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="row">
+                    <div class="col-sm-6">Last Name :</div>
+                    <div class="col-sm-6">{{user.lastName}}</div>
+                </div>
+            </div>
+        </div>
+        <div class="row baris">
+            <div class="col-md-4">
+                <div class="row">
+                    <div class="col-sm-6">Email :</div>
+                    <div class="col-sm-6">{{user.email}}</div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="row">
+                    <div class="col-sm-6">Birth Date :</div>
+                    <div class="col-sm-6">{{user.birthDate | date}}</div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="row">
+                    <div class="col-sm-6">Basic Salary :</div>
+                    <div class="col-sm-6">Rp. {{user.basicSalary | number:'1.0-0'}}</div>
+                </div>
+            </div>
+        </div>
+        <div class="row baris">
+            <div class="col-md-4">
+                <div class="row">
+                    <div class="col-sm-6">Group :</div>
+                    <div class="col-sm-6">{{user.group}}</div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="row">
+                    <div class="col-sm-6">Status :</div>
+                    <div class="col-sm-6">{{user.status}}</div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="row">
+                    <div class="col-sm-6">Description :</div>
+                    <div class="col-sm-6">{{user.description | date}}</div>
+                </div>
+            </div>
+        </div>
+        <div class="row baris">
+            <button type="submit" class="btn btn-primary" (click)="return()">Ok</button>
+        </div>
+    </nb-card-body>
+</nb-card>
