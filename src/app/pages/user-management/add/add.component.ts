@@ -20,6 +20,7 @@ export class AddComponent implements OnInit {
   dynamicForm!: FormGroup; // inisiasi form
   submitted = false;
   group: any[] = [];
+  edit: boolean = false;
   formatter = (result: string) => result.toUpperCase();
 
   search: OperatorFunction<string, readonly string[]> = (text$: Observable<string>) =>
@@ -46,6 +47,7 @@ export class AddComponent implements OnInit {
         this.user = UsersTable.Users[id - 1];
         this.title = 'Edit data user ' + this.user.userName;
         this.generateFormValue();
+        this.edit = true;
       } else {
         this.title = 'Add new data user';
       }
@@ -105,7 +107,11 @@ export class AddComponent implements OnInit {
   
   // inisiasi untuk memudahkan pemanggilan
   get f() { return this.dynamicForm.controls; }
-  get t() { return this.f.user as FormArray; }
+  get t() { return (this.dynamicForm.controls['user'] as FormArray).controls; }
+
+  getFormGroupAt(i: number) {
+    return (this.dynamicForm.controls['user'] as FormArray).at(i) as FormGroup;
+  }
 
   return() {
     this.router.navigate(['/pages/users/list']);
@@ -118,7 +124,7 @@ export class AddComponent implements OnInit {
       // jika ada data yg belum terisi atau invalid maka sistem berhenti
       return;
     }
-    if (this.user.id) {
+    if (this.edit) {
 
       const value = this.dynamicForm.value;
 

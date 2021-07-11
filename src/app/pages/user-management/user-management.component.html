@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-lg-12">
-        <nb-card [nbSpinner]="loading" nbSpinnerStatus="danger" nbSpinnerSize="giant" nbSpinnerMessage="Loading">
+        <nb-card nbSpinnerStatus="danger" nbSpinnerSize="giant" nbSpinnerMessage="Loading">
               <nb-card-header>List Users</nb-card-header>
         <nb-card-body>
           <!-- search, filter status dan action add new -->
@@ -20,7 +20,7 @@
               <button type="button" (click)="clear()" class="btn btn-info">Clear</button>
             </div>
             <div class="col-lg-3 box-button">
-              <button type="button" (click)="createComponent('new')" class="btn btn-primary" style="float: right;">Add</button>
+              <button type="button" (click)="createComponent('new', users[0])" class="btn btn-primary" style="float: right;">Add</button>
             </div>
           </div>
           <!---->
